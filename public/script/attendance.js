@@ -100,6 +100,7 @@ function getClasses(){
                         selectClasses(el)
                     })
                 }
+                getStudents()
             })
         }).catch(e => {
             console.log('Error Occured in Fetching Classes')
@@ -107,8 +108,8 @@ function getClasses(){
     }
 
 getClasses()
-document.getElementById('select').addEventListener('change',getStudents)
-setTimeout(getStudents,1000)
+// document.getElementById('select').addEventListener('change',getStudents)
+// setTimeout(getStudents,1000)
 
 //Submit attendance
 document.getElementById('submit').addEventListener('click', () => {
