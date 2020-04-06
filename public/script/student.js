@@ -72,5 +72,3 @@ function getClasses(){
 
 getClasses()
 document.getElementById('select').addEventListener('change',getStudents)
-// getStudents()
-// setTimeout(getStudents,1000)

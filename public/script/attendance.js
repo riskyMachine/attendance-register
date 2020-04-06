@@ -108,8 +108,7 @@ function getClasses(){
     }
 
 getClasses()
-// document.getElementById('select').addEventListener('change',getStudents)
-// setTimeout(getStudents,1000)
+document.getElementById('select').addEventListener('change',getStudents)
 
 //Submit attendance
 document.getElementById('submit').addEventListener('click', () => {
