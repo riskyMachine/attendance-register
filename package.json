@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "env-cmd ./config/dev.env nodemon src/app.js -e js,hbs"
+    "dev": "env-cmd ./config/dev.env nodemon src/app.js -e js,hbs",
+    "start": "node src/index.js"
   },
   "author": "rohan",
   "license": "ISC",
