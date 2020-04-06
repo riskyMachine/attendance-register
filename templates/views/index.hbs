@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel = "stylesheet" href = "./css/styles.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <nav class="navbar navbar-light bg-light icon navbar-left">
+                    <a class="navbar-brand">
+                        <img src="./image/school.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                        School Register
+                    </a>
+                </nav>
+            </div>
+            <form action = "/users/loginPage" method = "GET" class="form-inline align-right">
+                <button type = "submit" id = "login-state">Login</button>
+            </form>
+        </nav>
+        <div class="container">
+        {{>signup}}
+        </div>
+    </body>
+    <script src="./script/script.js"></script>
+</html>

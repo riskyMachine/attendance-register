@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel = "stylesheet" href = "../css/styles.css">
+        <style>
+            .container{
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            .container{
+                margin-left: 77px;
+            }
+            h3{
+                margin-top: 20px;
+            }form{
+                margin-left: 0px;
+            }button{
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        {{>nav}}
+        <div class="container" id = "div-1">
+            <h3>Hey there {{user.name}}!</h3>
+            <form id = "form-1"></form>
+            <form id = "form-2" class="form-group"></form>
+        </div>
+
+    </body>
+    <script src="../script/dash-script.js"></script>
+</html>

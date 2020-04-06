@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel = "stylesheet" href = "../css/styles.css">
+        <style>
+            .container{
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            .container{
+                margin-left: 77px;
+            }
+            h3{
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        {{>nav}}
+        <div class="container">
+            <form action = "/users/me" method = "POST" autocomplete="off" id="myForm">
+                <div class="form-group">
+                    <h4>Edit Profile</h4>
+                    <label for="exampleInputEmail1">Name</label>
+                    <input class="form-control"  placeholder="{{user.name}}" name = "name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Age</label>
+                    <input class="form-control"  placeholder="{{user.age}}" name = "age">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password" name = "password">
+                </div>
+                <button type="submit" id = "submit" class="btn btn-primary">Save</button>
+                <button id = "cancel" class="btn btn-primary">Cancel</button>
+            </form>            
+        </div>
+    </body>
+</html>

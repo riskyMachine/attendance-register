@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel = "stylesheet" href = "../css/styles.css">
+        <style>
+            .container{
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            .container{
+                margin-left: 77px;
+            }
+            h3{
+                margin-top: 20px;
+            }
+            #dropdown-item-1{
+                display: none;
+            }
+            #img-form{
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        {{>nav}}
+        <div class="container">
+            <h3>Hey there {{user.name}}!</h3>
+            <hr>
+            <form action="/users/me/avatar" method="POST" enctype="multipart/form-data" id="img-form">
+                    <div>
+                    <label ><b>Profile Photo:</b></label>
+                    </div>
+                    <div>
+                    <input id="image" type="file" name="avatar" placeholder="Photo" captured>
+                    </div>
+                    <button type="submit" id = "submit-pic" 
+                    class="btn btn-primary" style="margin-top: 10px; margin-bottom: 10px;" >Submit</button>
+            </form>
+                <img id = "profile-pic" src = {{url}}>
+            <div class="div profile">
+                <div class = "card">
+                    <div class="card-body">
+                       Name:  {{user.name}}
+                    </div>
+                </div>
+                <div class = "card">
+                    <div class="card-body">
+                        Age:  {{user.age}}
+                    </div>
+                </div>
+                <div class = "card">
+                    <div class="card-body">
+                        Email: {{user.email}}
+                    </div>
+                </div>
+                <div class = "form-wrapper">
+                    <form action = "/profile/update" method = "GET" style = "margin: 0;">
+                    <button type="submit" id = "cancel" class="btn btn-primary" style="margin-top: 20px;">Edit Profile</button>
+                    </form>
+                    <form action="/users/me/deleteAvatar" method="POST" style = "margin: 0;">
+                    <button type = "submit" id = "remove-pic" class="btn btn-primary" style="margin-top: 20px;">Remove Pic</button>                
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+    <script>
+        document.getElementById('img-form').addEventListener('submit',(e) => {
+            e.preventDefult()
+        })
+        if(document.getElementById('profile-pic').src.split('/').find(e => e == 'avatar')){
+            document.getElementById('img-form').style.display = 'none'
+        }else{
+            document.getElementById('img-form').style.display = 'inline'
+            document.getElementById('profile-pic').style.display = 'none'
+            document.getElementById('remove-pic').style.display = 'none'     
+        }
+    </script>
+</html>
